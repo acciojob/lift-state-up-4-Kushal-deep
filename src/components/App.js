@@ -8,7 +8,7 @@ const App = () => {
   const [result,setResult]=useState([])
 
   const addItem = ()=>{
-    setResult([...result,`${name}-${price}`])
+    setResult([...result,`${name}-$${price}`])
     setName("")
     setPrice("");
 
@@ -24,7 +24,7 @@ const App = () => {
         {/* Do not remove the main div */}
         <h1>Parent Component</h1>
         <label>Item name: <input type="text"  value={name} id="itemName" onChange={e=>setName(e.target.value)}></input></label>
-        <label>Item price<input type="text" value={price}  id="itemPrice" onChange={e=>setPrice(e.target.value)}></input></label>
+        <label>Item price<input type="number" value={price}  id="itemPrice" onChange={e=>setPrice(e.target.value)}></input></label>
         
         <button onClick={addItem}>Add Item</button>
         <Child result={result} Remove={Remove}></Child>
